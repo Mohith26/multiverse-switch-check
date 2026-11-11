@@ -92,7 +92,7 @@ function filtersHTML() {
     ${sel('f-cand', 'Candidate model', CANDS, store.cand, (o) => o)}
     ${sel('f-delta', 'Max quality drop', DELTAS, store.delta, (o) => `${o} point${o > 1 ? 's' : ''}`)}
     ${sel('f-alpha', 'Error rate (family-wise)', ALPHAS, store.alpha, (o) => `${o}%`)}
-    <div class="field"><label>Shadow window</label><div class="static">${dayLabel(0)} – ${dayLabel(DATA.days - 1)}, ${Math.round(DATA.shadowRate * 100)}%</div></div>
+    <div class="field"><label>Shadow window · ${Math.round(DATA.shadowRate * 100)}%</label><div class="static">${dayLabel(0)} – ${dayLabel(DATA.days - 1)}</div></div>
     <button class="btn" id="f-reset" type="button">Reset to defaults</button>
   </div></section>`;
 }
@@ -106,7 +106,7 @@ function currentPath() { const { page, id } = parseHash(); return '/' + page + (
 
 // ---------- interval glyph: anytime-valid interval vs tolerance, scale -6..+10 points
 function ivlSVG(lcb, ucb, est, delta) {
-  const lo = -0.06, hi = 0.10, W = 110, x = (v) => Math.max(0, Math.min(W, ((v - lo) / (hi - lo)) * W));
+  const lo = -0.06, hi = 0.10, W = 96, x = (v) => Math.max(0, Math.min(W, ((v - lo) / (hi - lo)) * W));
   const col = ucb < delta ? '#00cc66' : lcb > delta ? '#f01438' : '#ffa726';
   return `<svg class="ivl" viewBox="0 0 ${W} 14" aria-hidden="true"><line x1="${x(0)}" x2="${x(0)}" y1="1" y2="13" stroke="rgb(255 255 255 / .25)"/><line x1="${x(delta)}" x2="${x(delta)}" y1="0" y2="14" stroke="#ffa726" stroke-dasharray="2 2"/><rect x="${x(lcb)}" y="4" width="${Math.max(2, x(ucb) - x(lcb))}" height="6" rx="3" fill="${col}" opacity=".55"/><circle cx="${x(est)}" cy="7" r="2.6" fill="#fff"/></svg>`;
 }
@@ -134,7 +134,7 @@ function renderList() {
   html += `<div class="alert info" role="note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8"/></svg><div><b>${nCert + nSw} of ${an.K} shadowed workloads</b> are certified to lose at most ${store.delta} point${store.delta > 1 ? 's' : ''} of pass rate on ${DATA.candidate}, with at most a ${store.alpha}% chance that any certificate on this page is wrong, however often you check. Switching them saves <b>${fmtUSD(avail + realized)}/month</b> (${((avail + realized) / bill * 100).toFixed(0)}% of this account's ${fmtUSD(bill)}). ${nReg ? `<b>${nReg}</b> workload${nReg > 1 ? 's show' : ' shows'} a confirmed quality drop.` : ''}</div></div>`;
   html += `<div class="section-head"><h2>Workloads</h2><div class="actions"><button class="btn" id="exCSV" type="button">${dlIcon}<span>Export CSV</span></button><button class="btn" id="exJSON" type="button">${dlIcon}<span>Certificates JSON</span></button></div></div>`;
   html += `<section class="glass" style="padding:0;overflow:hidden"><div class="table-wrap"><table class="t" aria-label="Workloads">
-    <colgroup><col style="width:21%"><col style="width:9%"><col style="width:8%"><col style="width:21%"><col style="width:12%"><col style="width:10%"><col style="width:10%"><col style="width:9%"></colgroup>
+    <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"></colgroup>
     <thead><tr><th>Workload</th><th>Pairs</th><th title="Candidate pass rate minus current pass rate, in points">Change</th><th class="l" title="Anytime-valid ${100 - store.alpha}% interval for the quality drop (points); dashed line = your max drop">Drop interval (pts)</th><th class="l">Status</th><th>Cost / mo</th><th>If switched</th><th>Savings</th></tr></thead><tbody>`;
   rows.forEach((row, i) => {
     const s = st[i]; const r = row.r;
