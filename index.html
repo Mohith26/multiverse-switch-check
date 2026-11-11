@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Switch Check: certify which workloads can move to a compressed CompactifAI model, with an anytime-valid quality guarantee. Unofficial concept demo." />
+  <title>Switch Check · CompactifAI</title>
+  <link rel="icon" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="root">
+    <aside class="sidebar" aria-label="Navigation menu">
+      <div class="sidebar-content">
+        <div>
+          <a class="logo-bar" href="#/switch-check" aria-label="CompactifAI home"><img src="assets/logo.svg" alt="CompactifAI" width="150" height="113" /></a>
+          <div class="nav-menu">
+            <p class="nav-title">MENU</p>
+            <ul class="nav-list">
+              <li><a class="nav-item" href="#/playground" data-route="playground">Playground</a></li>
+              <li><a class="nav-item" href="#/usage" data-route="usage">API Usage</a></li>
+              <li><a class="nav-item" href="#/switch-check" data-route="switch-check">Switch Check <span class="new-pill">New</span></a></li>
+              <li><a class="nav-item" href="#/api-keys" data-route="api-keys">Manage API Keys</a></li>
+              <li><a class="nav-item" href="#/rate-limits" data-route="rate-limits">Usage Limits</a></li>
+              <li><a class="nav-item" href="#/wallet" data-route="wallet">Wallet</a></li>
+            </ul>
+            <p class="nav-title">ACCOUNT MANAGEMENT</p>
+            <ul class="nav-list">
+              <li><a class="nav-item" href="#/settings" data-route="settings"><span class="inner"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>Settings</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav-resources">
+          <p class="nav-title">RESOURCES</p>
+          <ul class="nav-list links">
+            <li><a class="link-item" href="https://docs.compactif.ai/faq/" target="_blank" rel="noreferrer noopener">FAQ</a></li>
+            <li><a class="link-item" href="https://docs.compactif.ai/pricing/" target="_blank" rel="noreferrer noopener">Pricing</a></li>
+            <li><a class="link-item" href="https://docs.compactif.ai/api_reference/" target="_blank" rel="noreferrer noopener">API Reference</a></li>
+            <li><a class="link-item" href="https://docs.compactif.ai/" target="_blank" rel="noreferrer noopener">Documentation</a></li>
+            <li><a class="link-item" href="#/contact" data-route="contact">Contact us</a></li>
+          </ul>
+          <div class="nav-card">
+            <div class="profile"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#6c5ce7"/><circle cx="12" cy="9.2" r="3.6" fill="#fff"/><path d="M5.6 18.6c1.3-2.6 3.7-4 6.4-4s5.1 1.4 6.4 4A9.9 9.9 0 0 1 12 22a9.9 9.9 0 0 1-6.4-3.4z" fill="#fff"/></svg></span><span class="pname">Lucía Ortega</span></div>
+            <button class="logout" type="button" aria-label="Log out"><svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path fill="currentColor" d="m17 8-1.41 1.41L17.17 11H9v2h8.17l-1.58 1.58L17 16l4-4zM5 5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7v-2H5z"/></svg><span>Log out</span></button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main" id="main" tabindex="-1">
+      <div class="topright">
+        <button class="chip balance" type="button" title="Wallet balance" aria-label="Wallet balance"><svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path fill="currentColor" d="M21 18v1c0 1.1-.9 2-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14c1.1 0 2 .9 2 2v1h-9a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2zm-9-2h10V8H12zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5"/></svg><span>$184.20</span></button>
+        <button class="icon-btn" type="button" aria-label="Notifications"><svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path fill="currentColor" d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2m6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5z"/></svg></button>
+      </div>
+      <div id="view" aria-live="polite"></div>
+      <footer class="foot">Unofficial concept demo by Mohith Gajjela. Not affiliated with Multiverse Computing. Synthetic shadow traffic seeded from published CompactifAI benchmark gaps; prices from docs.compactif.ai.</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <div id="modal" class="modal" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

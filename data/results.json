@@ -1,0 +1,217 @@
+{
+  "generated": "node scripts/results.mjs 1000",
+  "settings": {
+    "delta": 0.02,
+    "alpha": 0.05,
+    "current": "glm-5-3",
+    "candidate": "quasar-1-2-358b"
+  },
+  "account": {
+    "rows": [
+      {
+        "id": "retail-support-agent",
+        "status": "certified",
+        "n": 36331,
+        "deltaHat": -0.02251520739864028,
+        "lcb": -0.03,
+        "ucb": -0.015,
+        "decidedDay": 0,
+        "cost": 542.1264460114286,
+        "costIfSwitched": 290.97598750628566
+      },
+      {
+        "id": "telecom-support-agent",
+        "status": "certified",
+        "n": 10921,
+        "deltaHat": -0.02829411226078198,
+        "lcb": -0.045,
+        "ucb": -0.015,
+        "decidedDay": 1,
+        "cost": 156.91899960000003,
+        "costIfSwitched": 84.29798718
+      },
+      {
+        "id": "workflow-automation",
+        "status": "certified",
+        "n": 8548,
+        "deltaHat": -0.018132896583996257,
+        "lcb": -0.035,
+        "ucb": -0.005,
+        "decidedDay": 1,
+        "cost": 220.02044736,
+        "costIfSwitched": 118.39171076228571
+      },
+      {
+        "id": "airline-rebooking",
+        "status": "certified",
+        "n": 5039,
+        "deltaHat": -0.0039690414764834295,
+        "lcb": -0.025,
+        "ucb": 0.0175,
+        "decidedDay": 8,
+        "cost": 74.94526429714287,
+        "costIfSwitched": 40.246044620571425
+      },
+      {
+        "id": "sci-code-assistant",
+        "status": "certified",
+        "n": 3991,
+        "deltaHat": -0.005512402906539714,
+        "lcb": -0.02,
+        "ucb": 0.0175,
+        "decidedDay": 13,
+        "cost": 148.34104405714288,
+        "costIfSwitched": 78.01152451714286
+      },
+      {
+        "id": "bank-dispute-agent",
+        "status": "certified",
+        "n": 7416,
+        "deltaHat": 0.0016181229773462784,
+        "lcb": -0.0125,
+        "ucb": 0.015,
+        "decidedDay": 4,
+        "cost": 123.42237068571428,
+        "costIfSwitched": 66.55415664857144
+      },
+      {
+        "id": "contract-qa",
+        "status": "collecting",
+        "n": 3630,
+        "deltaHat": 0.009917355371900827,
+        "lcb": -0.01,
+        "ucb": 0.025,
+        "decidedDay": -1,
+        "cost": 455.64360857142856,
+        "costIfSwitched": 249.71416517142856
+      },
+      {
+        "id": "i18n-code-migration",
+        "status": "collecting",
+        "n": 2491,
+        "deltaHat": 0.014050582095543959,
+        "lcb": -0.0075,
+        "ucb": 0.04,
+        "decidedDay": -1,
+        "cost": 134.20948714285714,
+        "costIfSwitched": 72.69982971428571
+      },
+      {
+        "id": "pr-review-bot",
+        "status": "collecting",
+        "n": 3064,
+        "deltaHat": 0.013381201044386422,
+        "lcb": -0.005,
+        "ucb": 0.035,
+        "decidedDay": -1,
+        "cost": 174.32234057142855,
+        "costIfSwitched": 94.60616502857143
+      },
+      {
+        "id": "research-qa",
+        "status": "regression",
+        "n": 6001,
+        "deltaHat": 0.036993834360939844,
+        "lcb": 0.0275,
+        "ucb": 0.055,
+        "decidedDay": 5,
+        "cost": 246.54705711428574,
+        "costIfSwitched": 128.8129888414286
+      },
+      {
+        "id": "terminal-ops-agent",
+        "status": "collecting",
+        "n": 1449,
+        "deltaHat": 0.05659075224292615,
+        "lcb": 0.0125,
+        "ucb": 0.095,
+        "decidedDay": -1,
+        "cost": 57.437609142857134,
+        "costIfSwitched": 31.1742816
+      },
+      {
+        "id": "report-drafting",
+        "status": "regression",
+        "n": 3650,
+        "deltaHat": 0.04904109589041096,
+        "lcb": 0.025,
+        "ucb": 0.075,
+        "decidedDay": 2,
+        "cost": 257.71213419428574,
+        "costIfSwitched": 136.408628664
+      },
+      {
+        "id": "kb-rerank",
+        "status": "not-shadowed",
+        "n": 0,
+        "deltaHat": null,
+        "lcb": null,
+        "ucb": null,
+        "decidedDay": -1,
+        "cost": 163.9506274285714,
+        "costIfSwitched": 89.78528271428569
+      }
+    ],
+    "bill": 2755.5974361771428,
+    "saved": 587.2971607765714,
+    "savedPct": 0.21312879489078507,
+    "certified": 6,
+    "shadowed": 12,
+    "regressions": 2
+  },
+  "study": {
+    "replays": 1000,
+    "delta": 0.02,
+    "alpha": 0.05,
+    "unsafe": [
+      "pr-review-bot",
+      "research-qa",
+      "terminal-ops-agent",
+      "report-drafting"
+    ],
+    "safe": [
+      "retail-support-agent",
+      "telecom-support-agent",
+      "workflow-automation",
+      "airline-rebooking",
+      "sci-code-assistant",
+      "bank-dispute-agent",
+      "contract-qa",
+      "i18n-code-migration"
+    ],
+    "familyWiseFalseCert": {
+      "switchCheck": 0,
+      "naiveDailyZ": 0.204,
+      "fixedDay14Bonferroni": 0.002
+    },
+    "perWorkloadFalseCert": {
+      "switchCheck": {
+        "pr-review-bot": 0,
+        "research-qa": 0,
+        "terminal-ops-agent": 0,
+        "report-drafting": 0
+      },
+      "naiveDailyZ": {
+        "pr-review-bot": 0.191,
+        "research-qa": 0.008,
+        "terminal-ops-agent": 0.012,
+        "report-drafting": 0.001
+      }
+    },
+    "safeCertifiedShare": {
+      "switchCheck": 0.66,
+      "naiveDailyZ": 0.949625,
+      "fixedDay14Bonferroni": 0.791625
+    },
+    "medianDayToCertify": {
+      "switchCheck": 3,
+      "naiveDailyZ": 1,
+      "fixedDay14Bonferroni": 14
+    },
+    "regressionAlarms": {
+      "trueOnUnsafe": 0.30575,
+      "falseOnSafe": 0
+    }
+  },
+  "seconds": 178.672
+}
